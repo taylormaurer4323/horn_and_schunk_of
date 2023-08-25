@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
             cv::waitKey(0);
         }
    }
-    */
+    
 
     std::string path_to_file = argv[1];
     cv::Mat image_cv = cv::imread(path_to_file, cv::IMREAD_GRAYSCALE);
@@ -56,7 +56,23 @@ int main(int argc, char *argv[])
     //pp_util::array2cv(testA);
    //cv::Mat image_cv = cv::imread(path_to_file);
    //cv::namedWindow("Display", cv::WINDOW_AUTOSIZE);
-
-
+    */
+    std::string path_to_file = argv[1];
+    cv::Mat image_cv = cv::imread(path_to_file, cv::IMREAD_GRAYSCALE);
+    cv::Mat gradx_img, grady_img, grad_img;
+    cv::Mat Dx, Dy;
+    cv::Sobel(image_cv, Dx, CV_64F, 1, 0, 3);
+    cv::Sobel(image_cv, Dy, CV_64F, 0, 1, 3);
+    //My Gradient sucks - next step is to implement the sobel filter.
+    //Start by implementing a C++ convolution routine. I want to try this
+    //myself
+    img_util::gradient_x(image_cv, gradx_img);
+    img_util::gradient_y(image_cv, grady_img);
+    img_util::gradient(image_cv, grad_img);
+    imwrite("grad_x.jpg", gradx_img);
+    imwrite("grad_y.jpg", grady_img);
+    imwrite("grad.jpg", grad_img);
+    imwrite("sobel_x.jpg", Dx);
+    imwrite("sobel_y.jpg", Dy);
     return 0;
 }
