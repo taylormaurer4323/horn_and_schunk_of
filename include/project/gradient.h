@@ -17,7 +17,7 @@ namespace img_util
     const Array<float, Dynamic, Dynamic> & img,
     Array<float, Dynamic, Dynamic> & grad_img);
 
-  void sobel_gradient_calc(int s_r, int s_c, 
+  void sobel_gradient_calc(
     const Array<float, Dynamic, Dynamic> & img,
     Array<float, Dynamic, Dynamic> & grad_img);
 

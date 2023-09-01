@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
    //cv::Mat image_cv = cv::imread(path_to_file);
    //cv::namedWindow("Display", cv::WINDOW_AUTOSIZE);
     */
+   
     std::string path_to_file = argv[1];
     cv::Mat image_cv = cv::imread(path_to_file, cv::IMREAD_GRAYSCALE);
     cv::Mat gradx_img, grady_img, grad_img;
