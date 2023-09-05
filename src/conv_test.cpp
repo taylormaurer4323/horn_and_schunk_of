@@ -24,9 +24,7 @@ int main(int argc, char *argv[])
     cv::Mat Dx, Dy;
     cv::Sobel(image_cv, Dx, CV_64F, 1, 0, 3);
     cv::Sobel(image_cv, Dy, CV_64F, 0, 1, 3);
-    //My Gradient sucks - next step is to implement the sobel filter.
-    //Start by implementing a C++ convolution routine. I want to try this
-    //myself
+    
     */
    Eigen::Array<float, Dynamic, Dynamic> kernel {
         {-1 , 0, 1},
